@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Add New Comment</h1>
+
+    <form action="/comments" method="post">
+        <div id="title">
+            <label for="user">Title </label>
+            <br>
+            <input type="text" name="title" id="title"
+            placeholder="Title">
+        </div>
+        <br>
+        <div>
+            <label for="text">Description</label>
+            <br>
+            <br>
+            <textarea name="desc" id="text" cols="30" rows="5" placeholder="enter comment here..."></textarea>
+        </div>
+        <div>
+            <label for="text">MarkDown</label>
+            <br>
+            <br>
+            <textarea name="markdown" id="text" cols="30" rows="5" placeholder="enter comment here..."></textarea>
+        </div>
+        <br>
+        <button>Create Comment</button>
+    </form>
+
+
+    <style>
+        form{
+            width: 80%;
+        }
+    </style>
+    
+</body>
+</html>

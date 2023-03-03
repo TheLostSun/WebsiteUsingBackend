@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="nav">
+        <h1> <strong> MEDIUM </strong></h1>
+         <hr style="background-color: rgba(255, 255, 255,0.4);">
+         <h1 id="discover">Discover Stories , Articles And Research From GLA students</h1>
+        
+    </div>
+
+    
+<button>
+    <a href="/comments/new"> Add New Article</a>
+</button>
+    <div class="main">
+        <%for(const comment of comments){%>
+            <div class="inner"> 
+                </strong> <h1><%=comment.title %> </h1> 
+                <p><%=comment.date%></p>
+                <h3><%=comment.description%></h3>
+                
+                <button ><a href="/comments/<%=comment.id%>">Show</a> </button>
+                
+                <button><a href="/comments/<%=comment.id%>/edit">Edit</a></button>
+
+                <form action="/comments/<%= comment.id %>?_method=DELETE" method="post">
+                    <button> Delete</button>
+                </form>
+            </div>
+           
+        <%}%>
+    </div>
+
+
+    <style>
+        *{
+            margin:0px;
+            padding:0;
+        }
+        .nav{
+            height:70px;
+            padding: 20px;
+            background-color: rgb(243, 143, 11);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav h1{
+            font-size: xx-large;
+        }
+        #discover{
+            color: rgb(255, 255, 255);
+            font-size:xx-large;
+        }
+        .main{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+        .inner{
+            border: 2px solid rgba(68, 59, 59, 0.5);
+            padding: 8px;
+        }
+        a{
+            text-decoration: none;
+        }
+        button{
+            padding: 4px;
+            border-radius: 6px;
+            margin: 2px;
+        }
+    </style>
+    
+</body>
+</html>
